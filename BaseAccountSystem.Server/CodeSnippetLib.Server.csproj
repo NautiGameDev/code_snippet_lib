@@ -30,7 +30,7 @@
 </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\baseaccountsystem.client\baseaccountsystem.client.esproj">
+    <ProjectReference Include="..\baseaccountsystem.client\CodeSnippetLib.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

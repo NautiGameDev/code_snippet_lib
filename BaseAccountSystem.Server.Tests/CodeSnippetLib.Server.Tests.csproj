@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BaseAccountSystem.Server\BaseAccountSystem.Server.csproj" />
+    <ProjectReference Include="..\BaseAccountSystem.Server\CodeSnippetLib.Server.csproj" />
   </ItemGroup>
 
 </Project>

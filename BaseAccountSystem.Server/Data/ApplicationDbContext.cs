@@ -22,17 +22,17 @@ namespace BaseAccountSystem.Server.Data
             {
                 new IdentityRole
                 {
-                    Id = "d3c359f6-46d0-4201-8c24-4ddc89ef2433",
+                    Id = "6a83e9d4-a03f-4692-8f6b-6cdf372da900",
                     Name = "Admin",
                     NormalizedName = "ADMIN",
-                    ConcurrencyStamp = "d3c359f6-46d0-4201-8c24-4ddc89ef2433"
+                    ConcurrencyStamp = "6a83e9d4-a03f-4692-8f6b-6cdf372da900"
                 },
                 new IdentityRole
                 {
-                    Id = "0802b7cb-a06e-405c-b6e9-6bf1b516e33e",
+                    Id = "51f82c97-851b-4558-87ac-52fc0dacb5d5",
                     Name = "User",
                     NormalizedName = "USER",
-                    ConcurrencyStamp = "0802b7cb-a06e-405c-b6e9-6bf1b516e33e"
+                    ConcurrencyStamp = "51f82c97-851b-4558-87ac-52fc0dacb5d5"
                 }
             };
 

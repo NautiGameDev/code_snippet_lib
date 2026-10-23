@@ -56,7 +56,7 @@ builder.Services.AddAuthentication(options =>
     {
         OnMessageReceived = context =>
         {
-            string cookieName = builder.Configuration["JWT:CookieName"] ?? "BASAuth";
+            string cookieName = builder.Configuration["JWT:CookieName"] ?? "CSLAuth";
             var token = context.Request.Cookies[cookieName];
             context.Token = token;
             return Task.CompletedTask;

@@ -140,7 +140,7 @@ namespace BaseAccountSystem.Server.Controllers
         [Authorize]
         public async Task<IActionResult> LogOut()
         {
-            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "BASRefreshAuth";
+            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "CSLRefreshAuth";
             var refreshToken = Request.Cookies[refreshCookieKey];
 
             if (refreshToken != null)
@@ -159,7 +159,7 @@ namespace BaseAccountSystem.Server.Controllers
         public async Task<IActionResult> GetNewToken()
         {
             
-            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "BASRefreshAuth";
+            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "CSLRefreshAuth";
             var refreshToken = Request.Cookies[refreshCookieKey];
 
             if (string.IsNullOrEmpty(refreshToken))
@@ -229,8 +229,8 @@ namespace BaseAccountSystem.Server.Controllers
                 Expires = TokenHandler.GetRefreshTokenExpiration()
             };
 
-            string authCookieKey = _config["JWT:CookieName"] ?? "BASAuth";
-            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "BASRefreshAuth";
+            string authCookieKey = _config["JWT:CookieName"] ?? "CSLAuth";
+            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "CSLRefreshAuth";
 
             Response.Cookies.Append(authCookieKey, token, cookieOptions);
             Response.Cookies.Append(refreshCookieKey, refreshToken, refreshCookieOptions);
@@ -248,8 +248,8 @@ namespace BaseAccountSystem.Server.Controllers
                 Expires = DateTimeOffset.UtcNow.AddDays(-1)
             };
 
-            string authCookieKey = _config["JWT:CookieName"] ?? "BASAuth";
-            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "BASRefreshAuth";
+            string authCookieKey = _config["JWT:CookieName"] ?? "CSLAuth";
+            string refreshCookieKey = _config["JWT:RefreshCookieName"] ?? "CSLRefreshAuth";
 
             Response.Cookies.Append(authCookieKey, "", cookieOptions);
             Response.Cookies.Append(refreshCookieKey, "", cookieOptions);
