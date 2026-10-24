@@ -1,8 +1,8 @@
 <Solution>
-  <Project Path="baseaccountsystem.client/CodeSnippetLib.client.esproj">
+  <Project Path="CodeSnippetLib.Client/CodeSnippetLib.client.esproj" DisplayName="CodeSnippetLib.Client">
     <Build />
     <Deploy />
   </Project>
-  <Project Path="BaseAccountSystem.Server.Tests/CodeSnippetLib.Server.Tests.csproj" Id="c7be45d9-3c42-467e-801d-7b7e236bbfcc" />
-  <Project Path="BaseAccountSystem.Server/CodeSnippetLib.Server.csproj" />
+  <Project Path="CodeSnippetLib.Server.Tests/CodeSnippetLib.Server.Tests.csproj" />
+  <Project Path="CodeSnippetLib.Server/CodeSnippetLib.Server.csproj" />
 </Solution>
