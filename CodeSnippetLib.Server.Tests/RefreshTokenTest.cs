@@ -96,7 +96,7 @@ namespace CodeSnippetLib.Server.Tests
 
             //Store first refrsh token
             var setCookieHeaders = loginResponse.Headers.GetValues("Set-Cookie");
-            string originalRefreshCookie = setCookieHeaders.FirstOrDefault(c => c.StartsWith("BASRefreshAuth="));
+            string originalRefreshCookie = setCookieHeaders.FirstOrDefault(c => c.StartsWith("CSLRefreshAuth="));
 
             //Get new refresh token
             var firstResponse = await _client.PostAsync("/api/account/refresh", null);
