@@ -1,7 +1,6 @@
 <Solution>
-  <Project Path="CodeSnippetLib.Client/CodeSnippetLib.client.esproj" DisplayName="CodeSnippetLib.Client">
+  <Project Path="CodeSnippetLib.Client/CodeSnippetLib.client.esproj">
     <Build />
-    <Deploy />
   </Project>
   <Project Path="CodeSnippetLib.Server.Tests/CodeSnippetLib.Server.Tests.csproj" />
   <Project Path="CodeSnippetLib.Server/CodeSnippetLib.Server.csproj" />
