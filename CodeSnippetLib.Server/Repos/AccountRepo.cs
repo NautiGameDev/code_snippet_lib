@@ -1,12 +1,12 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using BaseAccountSystem.Server.Data;
-using BaseAccountSystem.Server.Helpers;
-using BaseAccountSystem.Server.Interfaces.Repos;
-using BaseAccountSystem.Server.Models;
+using CodeSnippetLib.Server.Data;
+using CodeSnippetLib.Server.Helpers;
+using CodeSnippetLib.Server.Interfaces.Repos;
+using CodeSnippetLib.Server.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BaseAccountSystem.Server.Repos
+namespace CodeSnippetLib.Server.Repos
 {
     public class AccountRepo : IAccountRepo
     {

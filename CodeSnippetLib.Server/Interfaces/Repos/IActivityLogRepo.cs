@@ -1,6 +1,6 @@
-﻿using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.Models;
 
-namespace BaseAccountSystem.Server.Interfaces.Repos
+namespace CodeSnippetLib.Server.Interfaces.Repos
 {
     public interface IActivityLogRepo
     {

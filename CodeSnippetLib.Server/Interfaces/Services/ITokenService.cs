@@ -1,6 +1,6 @@
-﻿using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.Models;
 
-namespace BaseAccountSystem.Server.Interfaces.Services
+namespace CodeSnippetLib.Server.Interfaces.Services
 {
     public interface ITokenService
     {

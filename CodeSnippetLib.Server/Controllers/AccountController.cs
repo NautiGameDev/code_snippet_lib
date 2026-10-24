@@ -1,16 +1,16 @@
-﻿using BaseAccountSystem.Server.DTOs.Account;
-using BaseAccountSystem.Server.DTOs.ActivityLogs;
-using BaseAccountSystem.Server.DTOs.API;
-using BaseAccountSystem.Server.DTOs.Email;
-using BaseAccountSystem.Server.Helpers;
-using BaseAccountSystem.Server.Interfaces.Services;
-using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.DTOs.Account;
+using CodeSnippetLib.Server.DTOs.ActivityLogs;
+using CodeSnippetLib.Server.DTOs.API;
+using CodeSnippetLib.Server.DTOs.Email;
+using CodeSnippetLib.Server.Helpers;
+using CodeSnippetLib.Server.Interfaces.Services;
+using CodeSnippetLib.Server.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BaseAccountSystem.Server.Controllers
+namespace CodeSnippetLib.Server.Controllers
 {
     public class AccountController : AppBaseController
     {

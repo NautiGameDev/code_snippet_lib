@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <SpaRoot>..\baseaccountsystem.client</SpaRoot>
+    <SpaRoot>..\CodeSnippetLib.Client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:58220</SpaProxyServerUrl>
     <UserSecretsId>3e841f50-2cd8-42d8-98b1-093af7f8497b</UserSecretsId>
@@ -30,7 +30,7 @@
 </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\baseaccountsystem.client\CodeSnippetLib.client.esproj">
+    <ProjectReference Include="..\CodeSnippetLib.Client\CodeSnippetLib.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

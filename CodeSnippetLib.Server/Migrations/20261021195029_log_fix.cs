@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BaseAccountSystem.Server.Migrations
+namespace CodeSnippetLib.Server.Migrations
 {
     /// <inheritdoc />
     public partial class log_fix : Migration

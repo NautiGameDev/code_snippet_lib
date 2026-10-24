@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Identity.Client;
 
-namespace BaseAccountSystem.Server.Tests.Helpers
+namespace CodeSnippetLib.Server.Tests.Helpers
 {
     public static class WriteTestResults
     {

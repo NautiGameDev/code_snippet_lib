@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BaseAccountSystem.Server.Models
+namespace CodeSnippetLib.Server.Models
 {
     [Table("RefreshTokens")]
     public class RefreshToken

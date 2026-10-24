@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Identity.Client;
 
-namespace BaseAccountSystem.Server.Tests.TestData
+namespace CodeSnippetLib.Server.Tests.TestData
 {
     public static class TestUser
     {

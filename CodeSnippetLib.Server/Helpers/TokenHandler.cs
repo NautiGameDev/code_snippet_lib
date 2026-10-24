@@ -1,4 +1,4 @@
-﻿namespace BaseAccountSystem.Server.Helpers
+﻿namespace CodeSnippetLib.Server.Helpers
 {
     public static class TokenHandler
     {

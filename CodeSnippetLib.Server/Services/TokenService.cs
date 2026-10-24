@@ -2,12 +2,12 @@
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using BaseAccountSystem.Server.Interfaces.Services;
-using BaseAccountSystem.Server.Models;
+using CodeSnippetLib.Server.Interfaces.Services;
+using CodeSnippetLib.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-namespace BaseAccountSystem.Server.Services
+namespace CodeSnippetLib.Server.Services
 {
     public class TokenService : ITokenService
     {

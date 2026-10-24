@@ -1,6 +1,6 @@
-﻿using BaseAccountSystem.Server.DTOs.Email;
+﻿using CodeSnippetLib.Server.DTOs.Email;
 
-namespace BaseAccountSystem.Server.Interfaces.Services
+namespace CodeSnippetLib.Server.Interfaces.Services
 {
     public interface IEmailService
     {

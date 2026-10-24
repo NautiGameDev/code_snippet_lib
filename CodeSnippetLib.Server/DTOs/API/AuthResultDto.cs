@@ -1,4 +1,4 @@
-﻿namespace BaseAccountSystem.Server.DTOs.API
+﻿namespace CodeSnippetLib.Server.DTOs.API
 {
     public class AuthResultDto
     {

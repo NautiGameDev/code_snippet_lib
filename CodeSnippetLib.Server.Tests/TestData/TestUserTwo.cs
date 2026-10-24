@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BaseAccountSystem.Server.Tests.TestData
+namespace CodeSnippetLib.Server.Tests.TestData
 {
     public static class TestUserTwo
     {

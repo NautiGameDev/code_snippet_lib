@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text;
-using BaseAccountSystem.Server.DTOs.Account;
-using BaseAccountSystem.Server.Models;
-using BaseAccountSystem.Server.Tests.Helpers;
-using BaseAccountSystem.Server.Tests.TestData;
+using CodeSnippetLib.Server.DTOs.Account;
+using CodeSnippetLib.Server.Models;
+using CodeSnippetLib.Server.Tests.Helpers;
+using CodeSnippetLib.Server.Tests.TestData;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -18,7 +18,7 @@ using Microsoft.OpenApi;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace BaseAccountSystem.Server.Tests
+namespace CodeSnippetLib.Server.Tests
 {
     public class LoginTests : IClassFixture<CustomWebApplicationFactory<Program>>
     {

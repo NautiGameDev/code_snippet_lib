@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BaseAccountSystem.Server.Controllers
+namespace CodeSnippetLib.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

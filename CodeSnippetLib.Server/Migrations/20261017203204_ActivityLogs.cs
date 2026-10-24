@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BaseAccountSystem.Server.Migrations
+namespace CodeSnippetLib.Server.Migrations
 {
     /// <inheritdoc />
     public partial class ActivityLogs : Migration

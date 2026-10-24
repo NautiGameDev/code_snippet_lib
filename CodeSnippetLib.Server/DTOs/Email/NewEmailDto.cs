@@ -1,4 +1,4 @@
-﻿namespace BaseAccountSystem.Server.DTOs.Email
+﻿namespace CodeSnippetLib.Server.DTOs.Email
 {
     public class NewEmailDto
     {

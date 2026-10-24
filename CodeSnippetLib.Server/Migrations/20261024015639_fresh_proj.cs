@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace BaseAccountSystem.Server.Migrations
+namespace CodeSnippetLib.Server.Migrations
 {
     /// <inheritdoc />
     public partial class fresh_proj : Migration

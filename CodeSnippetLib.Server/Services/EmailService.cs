@@ -1,11 +1,11 @@
-﻿using BaseAccountSystem.Server.Data;
-using BaseAccountSystem.Server.DTOs.Email;
-using BaseAccountSystem.Server.Interfaces.Services;
+﻿using CodeSnippetLib.Server.Data;
+using CodeSnippetLib.Server.DTOs.Email;
+using CodeSnippetLib.Server.Interfaces.Services;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;
 using MimeKit;
 
-namespace BaseAccountSystem.Server.Services
+namespace CodeSnippetLib.Server.Services
 {
     public class EmailService : IEmailService
     {

@@ -1,9 +1,9 @@
-﻿using BaseAccountSystem.Server.DTOs.ActivityLogs;
-using BaseAccountSystem.Server.Interfaces.Services;
+﻿using CodeSnippetLib.Server.DTOs.ActivityLogs;
+using CodeSnippetLib.Server.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BaseAccountSystem.Server.Controllers
+namespace CodeSnippetLib.Server.Controllers
 {
     public class ActivityLogController : AppBaseController
     {

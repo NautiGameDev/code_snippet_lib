@@ -1,10 +1,10 @@
 ﻿using System.Net;
-using BaseAccountSystem.Server.Data;
-using BaseAccountSystem.Server.Interfaces.Repos;
-using BaseAccountSystem.Server.Models;
+using CodeSnippetLib.Server.Data;
+using CodeSnippetLib.Server.Interfaces.Repos;
+using CodeSnippetLib.Server.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BaseAccountSystem.Server.Repos
+namespace CodeSnippetLib.Server.Repos
 {
     public class ActivityLogRepo : IActivityLogRepo
     {

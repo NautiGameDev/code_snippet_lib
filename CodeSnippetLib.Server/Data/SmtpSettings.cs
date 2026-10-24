@@ -1,4 +1,4 @@
-﻿namespace BaseAccountSystem.Server.Data
+﻿namespace CodeSnippetLib.Server.Data
 {
     public class SmtpSettings
     {

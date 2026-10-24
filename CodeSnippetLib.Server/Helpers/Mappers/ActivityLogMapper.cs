@@ -1,7 +1,7 @@
-﻿using BaseAccountSystem.Server.DTOs.ActivityLogs;
-using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.DTOs.ActivityLogs;
+using CodeSnippetLib.Server.Models;
 
-namespace BaseAccountSystem.Server.Helpers.Mappers
+namespace CodeSnippetLib.Server.Helpers.Mappers
 {
     public static class ActivityLogMapper
     {

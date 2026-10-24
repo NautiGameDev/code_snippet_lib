@@ -1,9 +1,9 @@
-using BaseAccountSystem.Server.Data;
-using BaseAccountSystem.Server.Interfaces.Repos;
-using BaseAccountSystem.Server.Interfaces.Services;
-using BaseAccountSystem.Server.Models;
-using BaseAccountSystem.Server.Repos;
-using BaseAccountSystem.Server.Services;
+using CodeSnippetLib.Server.Data;
+using CodeSnippetLib.Server.Interfaces.Repos;
+using CodeSnippetLib.Server.Interfaces.Services;
+using CodeSnippetLib.Server.Models;
+using CodeSnippetLib.Server.Repos;
+using CodeSnippetLib.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

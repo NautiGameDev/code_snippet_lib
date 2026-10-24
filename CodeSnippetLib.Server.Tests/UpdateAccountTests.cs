@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text;
-using BaseAccountSystem.Server.DTOs.Account;
-using BaseAccountSystem.Server.Tests.Helpers;
-using BaseAccountSystem.Server.Tests.TestData;
+using CodeSnippetLib.Server.DTOs.Account;
+using CodeSnippetLib.Server.Tests.Helpers;
+using CodeSnippetLib.Server.Tests.TestData;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit.Abstractions;
 
-namespace BaseAccountSystem.Server.Tests
+namespace CodeSnippetLib.Server.Tests
 {
     public class UpdateAccountTests : IClassFixture<CustomWebApplicationFactory<Program>>
     {

@@ -1,6 +1,6 @@
-﻿using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.Models;
 
-namespace BaseAccountSystem.Server.DTOs.ActivityLogs
+namespace CodeSnippetLib.Server.DTOs.ActivityLogs
 {
     public class ActivityLogDto
     {

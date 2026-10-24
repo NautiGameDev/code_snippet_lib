@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace BaseAccountSystem.Server.Helpers
+namespace CodeSnippetLib.Server.Helpers
 {
     public static class TokenHasher
     {

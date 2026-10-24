@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BaseAccountSystem.Server.Data;
-using BaseAccountSystem.Server.Models;
-using BaseAccountSystem.Server.Tests.Helpers;
-using BaseAccountSystem.Server.Tests.TestData;
+using CodeSnippetLib.Server.Data;
+using CodeSnippetLib.Server.Models;
+using CodeSnippetLib.Server.Tests.Helpers;
+using CodeSnippetLib.Server.Tests.TestData;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace BaseAccountSystem.Server.Tests
+namespace CodeSnippetLib.Server.Tests
 {
     public class CustomWebApplicationFactory<TProgram> : WebApplicationFactory<TProgram> where TProgram : class
     {

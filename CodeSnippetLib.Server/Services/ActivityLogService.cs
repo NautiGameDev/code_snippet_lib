@@ -1,10 +1,10 @@
-﻿using BaseAccountSystem.Server.DTOs.ActivityLogs;
-using BaseAccountSystem.Server.Helpers.Mappers;
-using BaseAccountSystem.Server.Interfaces.Repos;
-using BaseAccountSystem.Server.Interfaces.Services;
-using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.DTOs.ActivityLogs;
+using CodeSnippetLib.Server.Helpers.Mappers;
+using CodeSnippetLib.Server.Interfaces.Repos;
+using CodeSnippetLib.Server.Interfaces.Services;
+using CodeSnippetLib.Server.Models;
 
-namespace BaseAccountSystem.Server.Services
+namespace CodeSnippetLib.Server.Services
 {
     public class ActivityLogService : IActivityLogService
     {

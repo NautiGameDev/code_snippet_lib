@@ -1,4 +1,4 @@
-﻿namespace BaseAccountSystem.Server.DTOs.Account
+﻿namespace CodeSnippetLib.Server.DTOs.Account
 {
     public class NewAccountDto
     {

@@ -1,17 +1,17 @@
 ﻿using System.Text;
-using BaseAccountSystem.Server.Data;
-using BaseAccountSystem.Server.DTOs.Account;
-using BaseAccountSystem.Server.DTOs.API;
-using BaseAccountSystem.Server.DTOs.Email;
-using BaseAccountSystem.Server.Helpers;
-using BaseAccountSystem.Server.Interfaces.Repos;
-using BaseAccountSystem.Server.Interfaces.Services;
-using BaseAccountSystem.Server.Models;
+using CodeSnippetLib.Server.Data;
+using CodeSnippetLib.Server.DTOs.Account;
+using CodeSnippetLib.Server.DTOs.API;
+using CodeSnippetLib.Server.DTOs.Email;
+using CodeSnippetLib.Server.Helpers;
+using CodeSnippetLib.Server.Interfaces.Repos;
+using CodeSnippetLib.Server.Interfaces.Services;
+using CodeSnippetLib.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 
-namespace BaseAccountSystem.Server.Services
+namespace CodeSnippetLib.Server.Services
 {
     public class AccountService : IAccountService
     {

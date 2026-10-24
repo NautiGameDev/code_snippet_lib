@@ -1,10 +1,10 @@
-﻿using BaseAccountSystem.Server.DTOs.Account;
-using BaseAccountSystem.Server.DTOs.API;
-using BaseAccountSystem.Server.DTOs.Email;
-using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.DTOs.Account;
+using CodeSnippetLib.Server.DTOs.API;
+using CodeSnippetLib.Server.DTOs.Email;
+using CodeSnippetLib.Server.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace BaseAccountSystem.Server.Interfaces.Services
+namespace CodeSnippetLib.Server.Interfaces.Services
 {
     public interface IAccountService
     {

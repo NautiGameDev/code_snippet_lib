@@ -1,9 +1,9 @@
-﻿using BaseAccountSystem.Server.Models;
+﻿using CodeSnippetLib.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace BaseAccountSystem.Server.Data
+namespace CodeSnippetLib.Server.Data
 {
     public class ApplicationDbContext : IdentityDbContext<Account>
     {

@@ -4,7 +4,7 @@ using System.Text;
 using Azure;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
-namespace BaseAccountSystem.Server.Tests.Helpers
+namespace CodeSnippetLib.Server.Tests.Helpers
 {
     public static class EntryLogHandler
     {

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text;
-using BaseAccountSystem.Server.Data;
-using BaseAccountSystem.Server.DTOs.Account;
-using BaseAccountSystem.Server.DTOs.Email;
-using BaseAccountSystem.Server.Models;
-using BaseAccountSystem.Server.Tests.Helpers;
+using CodeSnippetLib.Server.Data;
+using CodeSnippetLib.Server.DTOs.Account;
+using CodeSnippetLib.Server.DTOs.Email;
+using CodeSnippetLib.Server.Models;
+using CodeSnippetLib.Server.Tests.Helpers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit.Abstractions;
 
-namespace BaseAccountSystem.Server.Tests
+namespace CodeSnippetLib.Server.Tests
 {
     public class ResetPasswordTests : IClassFixture<CustomWebApplicationFactory<Program>>
     {
