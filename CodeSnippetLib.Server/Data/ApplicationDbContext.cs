@@ -13,6 +13,9 @@ namespace CodeSnippetLib.Server.Data
 
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<ActivityLog> ActivityLogs { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<TagToPost> TagsToPost { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
