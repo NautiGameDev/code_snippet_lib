@@ -11,22 +11,28 @@ import AccountConfirmation from './Pages/AccountConfirmation';
 import RequestPasswordReset from './Pages/RequestPasswordReset';
 import ConfirmPasswordReset from './Pages/ConfirmPasswordReset';
 import ActivityLogs from './Pages/ActivityLogs';
+import Home from './Pages/Home';
+import LandingPage from './Pages/LandingPage';
 
 function App() {
     return (
         <div className="app-container">
             <Routes>
-                <Route index element={<Login />} />
+                <Route path="/" element={<Home />}>
+                    <Route index element={<LandingPage />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="register" element={<Register />} />
+                    <Route path="welcome/:username" element={<Welcome />} />
+                    <Route path="session-expired" element={<SessionExpired />} />
+                    <Route path="unauthenticated" element={<Unauthenticated />} />
+                    <Route path="confirm-email" element={<AccountConfirmation />} />
+                    <Route path="request-password-reset" element={<RequestPasswordReset />} />
+                    <Route path="reset-password" element={<ConfirmPasswordReset />} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
                 <Route path="dashboard/:username" element={<Dashboard />} />
-                <Route path="register" element={<Register />} />
-                <Route path="welcome/:username" element={<Welcome />} />
-                <Route path="sessionExpired" element={<SessionExpired />} />
-                <Route path="unauthenticated" element={<Unauthenticated />} />
-                <Route path="confirm-email" element={<AccountConfirmation />} />
-                <Route path="request-password-reset" element={<RequestPasswordReset />} />
-                <Route path="reset-password" element={<ConfirmPasswordReset />} />
                 <Route path="admin-logs" element={<ActivityLogs />} />
-                <Route path="*" element={<NotFound />} />
+                
             </Routes>
         </div>
     );

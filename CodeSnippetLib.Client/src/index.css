@@ -1,0 +1,113 @@
+:root {
+    /*Colors*/
+    --Background: #0F0E17;
+    --Card: #16161E;
+    --Shadow: #2A2B3F;
+    --Accent: #00FF66;
+    --Primary: #00F0FF;
+    --Tertiary: #FFE600;
+    --Text: #FFFFF0;
+    --Muted: #94A3B8;
+    --Error: #FF007F;
+
+    /*Sizes*/
+    --ExtraLargeFont: 2.5rem;
+    --LargeFont: 1.95rem;
+    --MediumFont: 1.56rem;
+    --SmallFont: 1.25rem;
+    --NormalFont: 1rem;
+    --ErrorFont: 0.9rem;
+
+    /*Weights*/
+    --Bold: 500;
+    --NormalWeight: 400;
+
+    /*Fonts*/
+    --BrandFont: "Chakra Petch", sans-serif;
+    --HeadingFont: "Kode Mono", monospace;
+    --BodyFont: "Inter", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: var(--Background);
+    color: var(--Text);
+    font-size: var(--NormalFont);
+    font-weight: var(--TextWeight);
+    font-family: var(--BodyFont);
+    margin: 0px;
+}
+
+.error {
+    color: var(--Error);
+    font-size: var(--ErrorFont);
+    font-family: var(--HeaderFont);
+    font-style: italic;
+}
+
+.no-select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.xl-font {
+    font-size: var(--ExtraLargeFont);
+}
+
+.lg-font {
+    font-size: var(--LargeFont);
+}
+
+.med-font {
+    font-size: var(--MediumFont);
+}
+
+.sm-font {
+    font-size: var(--SmallFont);
+}
+
+.heading {
+    font-family: var(--HeadingFont);
+}
+
+.primary {
+    color: var(--Primary);
+}
+
+.Accent {
+    color: var(--Accent);
+}
+
+.tertiary {
+    color: var(--Tertiary);
+}
+
+h1 {
+    font-size: var(--LargeFont);
+    font-family: var(--HeadingFont);
+}
+
+h2 {
+    font-size: var(--MediumFont);
+    font-family: var(--HeadingFont);
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-50 {
+    width: 50%;
+}

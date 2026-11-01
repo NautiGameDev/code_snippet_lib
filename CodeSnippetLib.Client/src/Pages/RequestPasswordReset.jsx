@@ -31,30 +31,29 @@ function RequestPasswordReset() {
     }
 
   return (
-      <div className="page">
+      <div className="view v-col-center">
 
           { sysMessage.trim() === "" ? (
-              <form onSubmit={(e) => handleSubmit(e)}>
+              <form className="glitch-in" onSubmit={(e) => handleSubmit(e)}>
                   <div className="form-header">
-                      <h1>Request password reset</h1>
-                  
+                      <h1>Request password reset</h1>                  
                   </div>
-                  <div className="form-row">
+                  <div className="form-row error">
                       {errorMessage}
                   </div>
                   <div className="form-row">
-                      <p>To reset your password, fill out the form below:</p>
+                      <p>Enter your email address to receive confirmation link:</p>
                   </div>
                   <div className="form-row">
                       <label htmlFor="email">Email Address:</label>
-                      <input id="email" type="email" value={email} placeholder="Enter email associated with account" onChange={(e) => setEmail(e.target.value)}></input>
+                      <input className="w-50" id="email" type="email" value={email} placeholder="Enter email associated with account" onChange={(e) => setEmail(e.target.value)}></input>
                   </div>
                   <div className="form-btn-container">
                     <button type="submit">Reset password</button>
                   </div>
               </form>
           ) : (
-            <h2>{sysMessage}</h2>
+            <span className="sm-font tertiary heading w-75 glitch-in">{sysMessage}</span>
           )}
 
       </div>

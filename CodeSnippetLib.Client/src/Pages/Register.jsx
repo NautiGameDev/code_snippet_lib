@@ -77,7 +77,7 @@ function Register() {
     }
 
   return (
-      <div className="page">
+      <div className="view v-col-center">
           <form onSubmit={(e) => handleSubmit(e)} >
               <div className="form-header">
                   <h1>New Account</h1>

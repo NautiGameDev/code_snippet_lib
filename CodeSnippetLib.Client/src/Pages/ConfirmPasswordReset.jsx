@@ -62,7 +62,7 @@ function ConfirmPasswordReset() {
         if (response.status === 200) {
             setSysMessage("Password reset successful. Redirecting to login page.");
             setTimeout(() => {
-                navigate("/")
+                navigate("/login")
             }, 3000);
         }
         else {
@@ -71,9 +71,9 @@ function ConfirmPasswordReset() {
     }
 
   return (
-      <div className="page">
+      <div className="view v-col-center">
           {sysMessage.trim() === "" ? (
-              <form onSubmit={(e) => handleSubmit(e)} >
+              <form className="glitch-in" onSubmit={(e) => handleSubmit(e)} >
                   <div className="form-header">
                     <h1>Enter new password</h1>
                   </div>
@@ -94,7 +94,7 @@ function ConfirmPasswordReset() {
 
               </form>
           ): (
-                  <h2>{ sysMessage }</h2>
+                  <span className="sm-font tertiary heading w-75 glitch-in">{ sysMessage }</span>
               )}
       </div>
   );

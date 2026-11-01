@@ -29,7 +29,7 @@ function Login() {
 
         if (response.status === 200) {
             login();
-            navigate(`/dashboard/${username}`);
+            navigate(`/`);
         }
         else {
             setLoginError(`Error ${response.status}: ${response.message}`);
@@ -37,12 +37,12 @@ function Login() {
     }
 
   return (
-      <div className="page">           
-          <form onSubmit={(e) => handleSubmit(e)} >
+      <div className="view v-col-center">           
+          <form className="glitch-in" onSubmit={(e) => handleSubmit(e)} >
               <div className="form-header">
                   <h1>Login</h1>
               </div>
-              <div className="form-row">
+              <div className="form-row error">
                   {loginError}
               </div>
               <div className="form-row">
@@ -55,10 +55,13 @@ function Login() {
               </div>
               <div className="form-btn-container">
                   <button type="submit">Login</button>
-                <Link to="/register">Create Account</Link>
+                <Link className="link" to="/register">Create Account</Link>
               </div>
               <div className="form-row">
-                  Forgot password? <Link to="/request-password-reset">Reset Password</Link>
+                  <p>
+                      Forgot password?
+                      <Link className="link" to="/request-password-reset">Request Reset</Link>
+                  </p>
               </div>
           </form>
       </div>
