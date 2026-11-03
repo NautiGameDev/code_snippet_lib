@@ -10,9 +10,13 @@ import NotFound from './Pages/NotFound';
 import AccountConfirmation from './Pages/AccountConfirmation';
 import RequestPasswordReset from './Pages/RequestPasswordReset';
 import ConfirmPasswordReset from './Pages/ConfirmPasswordReset';
-import ActivityLogs from './Pages/ActivityLogs';
 import Home from './Pages/Home';
 import LandingPage from './Pages/LandingPage';
+
+//Admin Dashboard
+import DbHome from './Pages/Dashboard/DbHome';
+import Write from './Pages/Dashboard/Write';
+import ActivityLogs from './Pages/Dashboard/ActivityLogs';
 
 function App() {
     return (
@@ -30,9 +34,11 @@ function App() {
                     <Route path="reset-password" element={<ConfirmPasswordReset />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
-                <Route path="dashboard/:username" element={<Dashboard />} />
-                <Route path="admin-logs" element={<ActivityLogs />} />
-                
+                <Route path="/Dashboard" element={<Dashboard />}>
+                    <Route index element={<DbHome />} />
+                    <Route path="new-post" element={<Write />} />
+                    <Route path="activity-logs" element={<ActivityLogs />} />
+                </Route>                
             </Routes>
         </div>
     );

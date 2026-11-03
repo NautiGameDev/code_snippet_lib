@@ -54,6 +54,36 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.link {
+    color: var(--Primary);
+    font-family: var(--HeadingFont);
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+    color: var(--Accent);
+}
+
+button {
+    background-color: var(--Text);
+    border: none;
+    padding: 8px 16px;
+    font-family: var(--HeadingFont);
+    font-weight: bold;
+    color: var(--Card);
+    font-size: var(--NormalFont);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--Muted);
+}
+
+button:hover {
+    background-color: var(--Accent);
+    cursor: pointer;
+    color: var(--Background);
+    box-shadow: 0px 0px 10px 1px var(--Accent);
+    scale: 1.05;
+}
+
 .xl-font {
     font-size: var(--ExtraLargeFont);
 }
@@ -96,18 +126,48 @@ h2 {
     font-family: var(--HeadingFont);
 }
 
-.mt-16 {
-    margin-top: 16px;
-}
 
-.w-100 {
+
+/*Table*/
+table {
     width: 100%;
+    border-collapse: collapse;
 }
 
-.w-75 {
-    width: 75%;
+th, td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--Muted);
+    text-align: left;
 }
 
-.w-50 {
-    width: 50%;
+tr {
+    border: 1px solid var(--Muted);
 }
+
+thead {
+    background-color: var(--Shadow);
+    color: var(--Text);
+    font-family: var(--HeadingFont);
+    font-size: var(--NormalFont);
+}
+
+.light-row {
+    background-color: var(--Background);
+}
+
+.dark-row {
+    background-color: var(--Card);
+}
+
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    border: 1px solid var(--Shadow);
+    padding: 4px 8px;
+    font-size: var(--ErrorFont);
+}
+
+
+
