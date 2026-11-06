@@ -33,6 +33,9 @@ function Dashboard() {
             case "New Post":
                 navigate("new-post");
                 break;
+            case "View Posts":
+                navigate("view-posts");
+                break;
             case "Logs":
                 navigate("activity-logs");
                 break;

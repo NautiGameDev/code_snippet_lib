@@ -11,7 +11,9 @@ namespace CodeSnippetLib.Server.Helpers.Mappers
             {
                 Title = post.Title,
                 Content = post.Content,
-                Tags = post.TagToPosts.Any() ? post.TagToPosts.Select(ttp => ttp.Tag.Name).ToList() : new List<string>()
+                Tags = post.TagToPosts.Any() ? post.TagToPosts.Select(ttp => ttp.Tag.Name).ToList() : new List<string>(),
+                CreatedAt = post.CreatedAt,
+                LastUpdated = post.UpdatedAt
             };
         }
     }

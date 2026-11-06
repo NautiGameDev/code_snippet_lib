@@ -13,10 +13,12 @@ import ConfirmPasswordReset from './Pages/ConfirmPasswordReset';
 import Home from './Pages/Home';
 import LandingPage from './Pages/LandingPage';
 
+
 //Admin Dashboard
 import DbHome from './Pages/Dashboard/DbHome';
 import Write from './Pages/Dashboard/Write';
 import ActivityLogs from './Pages/Dashboard/ActivityLogs';
+import ViewPosts from './Pages/Dashboard/ViewPosts';
 
 function App() {
     return (
@@ -37,6 +39,7 @@ function App() {
                 <Route path="/Dashboard" element={<Dashboard />}>
                     <Route index element={<DbHome />} />
                     <Route path="new-post" element={<Write />} />
+                    <Route path="view-posts" element={<ViewPosts />} />
                     <Route path="activity-logs" element={<ActivityLogs />} />
                 </Route>                
             </Routes>

@@ -7,6 +7,7 @@ namespace CodeSnippetLib.Server.Interfaces.Repos
         public Task CreatePost(Post newPost);
         public Task<Post?> GetPostBySlug(string slug);
         public Task<List<TagToPost>> GetPostsByTagId(int tagId);
-
+        public Task<List<Post>> GetPostSelection(int skip, int take);
+        public Task<int> GetPostCount();
     }
 }

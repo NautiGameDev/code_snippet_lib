@@ -35,5 +35,22 @@ namespace CodeSnippetLib.Server.Repos
                 .Include(ttp => ttp.Post)
                 .ToListAsync();
         }
+
+        public async Task<List<Post>> GetPostSelection(int skip, int take)
+        {   
+            return await _context.Posts
+                .AsNoTracking()
+                .OrderByDescending(x => x.CreatedAt)
+                .Skip(Math.Max(0, skip))
+                .Take(Math.Clamp(take, 1, 20))
+                .Include(p => p.TagToPosts)
+                .ThenInclude(ttp => ttp.Tag)
+                .ToListAsync();
+        }
+
+        public async Task<int> GetPostCount()
+        {
+            return await _context.Posts.CountAsync();
+        }
     }
 }

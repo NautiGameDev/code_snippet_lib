@@ -41,5 +41,21 @@ namespace CodeSnippetLib.Server.Controllers
 
             return Ok(post.ToPostDto());
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPostSelection([FromQuery] int skip = 0, [FromQuery] int take = 20)
+        {
+            List<PostDto> posts = await _postService.GetPostSelection(skip, take);
+
+            return Ok(new { message = "Posts retrieved successfully", posts = posts });
+        }
+
+        [HttpGet("get-count")]
+        public async Task<IActionResult> GetPostCount()
+        {
+            int count = await _postService.GetPostCount();
+
+            return Ok(new { message = "Count retrieved successfully", count = count });
+        }
     }
 }

@@ -45,7 +45,8 @@ namespace CodeSnippetLib.Server.Repos
         public async Task<List<ActivityLog>> GetAllActivityLogs()
         {
             return await _context.ActivityLogs
-                .Include(al => al.Account)
+                .OrderByDescending(al => al.TimeStamp)
+                .Include(al => al.Account)                
                 .ToListAsync();
         }
 

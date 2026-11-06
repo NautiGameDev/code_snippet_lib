@@ -1,5 +1,6 @@
 ﻿using CodeSnippetLib.Server.Data;
 using CodeSnippetLib.Server.DTOs.Post;
+using CodeSnippetLib.Server.Helpers.Mappers;
 using CodeSnippetLib.Server.Interfaces.Repos;
 using CodeSnippetLib.Server.Interfaces.Services;
 using CodeSnippetLib.Server.Models;
@@ -57,9 +58,21 @@ namespace CodeSnippetLib.Server.Services
             return await _postRepo.GetPostBySlug(slug);
         }
 
+        public async Task<int> GetPostCount()
+        {
+            return await _postRepo.GetPostCount();
+        }
+
         public async Task<List<TagToPost>> GetPostsByTagId(int tagId)
         {
             return await _postRepo.GetPostsByTagId(tagId);
+        }
+
+        public async Task<List<PostDto>> GetPostSelection(int skip, int take)
+        {
+            List<Post> posts = await _postRepo.GetPostSelection(skip, take);
+
+            return posts.Select(p => p.ToPostDto()).ToList();
         }
     }
 }

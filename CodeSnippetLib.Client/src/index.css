@@ -19,7 +19,7 @@
     --ErrorFont: 0.9rem;
 
     /*Weights*/
-    --Bold: 500;
+    --Bold: 600;
     --NormalWeight: 400;
 
     /*Fonts*/
@@ -116,14 +116,26 @@ button:hover {
     color: var(--Tertiary);
 }
 
+.muted {
+    color: var(--Muted);
+}
+
 h1 {
     font-size: var(--LargeFont);
     font-family: var(--HeadingFont);
+    margin: 0px;
 }
 
 h2 {
     font-size: var(--MediumFont);
     font-family: var(--HeadingFont);
+    margin: 0px;
+}
+
+h3 {
+    font-size: var(--SmallFont);
+    font-family: var(--HeadingFont);
+    margin: 0px;
 }
 
 
