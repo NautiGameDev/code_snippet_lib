@@ -23,7 +23,7 @@ function ActivityLogs() {
   return (
       <div className="view v-col-center">
           {sysMessage.trim() === "" ? (
-              <div className="card w-75 h-80 glitch-in">
+              <div className="card w-75 h-80 glitch-in pt-16 pb-16">
                   <div className="row w-100 h-row-centered">
                     <h2>Activity Logs</h2>
                   </div>

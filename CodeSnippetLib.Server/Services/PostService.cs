@@ -58,21 +58,16 @@ namespace CodeSnippetLib.Server.Services
             return await _postRepo.GetPostBySlug(slug);
         }
 
-        public async Task<int> GetPostCount()
-        {
-            return await _postRepo.GetPostCount();
-        }
-
         public async Task<List<TagToPost>> GetPostsByTagId(int tagId)
         {
             return await _postRepo.GetPostsByTagId(tagId);
         }
 
-        public async Task<List<PostDto>> GetPostSelection(int skip, int take)
+        public async Task<(List<PostDto> postDtos, int totalCount)> GetPostSelection(int skip, int take, string? search, string? tag)
         {
-            List<Post> posts = await _postRepo.GetPostSelection(skip, take);
+            var (posts, count) = await _postRepo.GetPostSelection(skip, take, search, tag);
 
-            return posts.Select(p => p.ToPostDto()).ToList();
+            return (posts.Select(p => p.ToPostDto()).ToList(), count);
         }
     }
 }

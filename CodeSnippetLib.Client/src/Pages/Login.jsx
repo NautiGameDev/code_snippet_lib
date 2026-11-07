@@ -38,7 +38,7 @@ function Login() {
 
   return (
       <div className="view v-col-center">           
-          <form className="glitch-in" onSubmit={(e) => handleSubmit(e)} >
+          <form className="glitch-in pt-16 pb-16 pl-16 pr-16" onSubmit={(e) => handleSubmit(e)} >
               <div className="form-header">
                   <h1>Login</h1>
               </div>

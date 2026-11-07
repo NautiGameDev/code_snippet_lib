@@ -84,6 +84,11 @@ button:hover {
     scale: 1.05;
 }
 
+.btn-small {
+    padding: 4px 8px;
+    font-size: var(--ErrorFont);
+}
+
 .xl-font {
     font-size: var(--ExtraLargeFont);
 }

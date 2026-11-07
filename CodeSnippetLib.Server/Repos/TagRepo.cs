@@ -14,6 +14,13 @@ namespace CodeSnippetLib.Server.Repos
             _context = context;
         }
 
+        public async Task<List<Tag>> GetAllTags()
+        {
+            return await _context.Tags
+                .OrderBy(t => t.Name)
+                .ToListAsync();
+        }
+
         public async Task<List<Tag>> GetTagList(string[] tagArray)
         {
             List<string> normalizedTags = tagArray

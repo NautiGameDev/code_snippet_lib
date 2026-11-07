@@ -50,7 +50,6 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--Muted);
-    padding: 32px 8px;
     gap: 16px;
     background-color: var(--Card);
     overflow-y: auto;
@@ -152,7 +151,6 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--Muted);
-    padding: 32px;
     gap: 16px;
     background-color: var(--Card);
 }
@@ -208,6 +206,23 @@
 }
 
 .form-row input:focus {
+    border: 2px solid var(--Primary);
+}
+
+.form-row select {
+    background-color: var(--Background);
+    font-family: var(--BodyFont);
+    outline: none;
+    border: 1px solid var(--Muted);
+    padding: 4px 4px;
+    color: var(--Text);
+}
+
+.form-row select:hover {
+    border: 1px solid var(--Accent);
+}
+
+.form-row select:focus {
     border: 2px solid var(--Primary);
 }
 
@@ -530,6 +545,20 @@
     height: 25%;
 }
 
+.h-75vh {
+    height: 75vh;
+}
+
+.h-60vh {
+    height: 60vh;
+}
+
+.h-50vh {
+    height: 50vh;
+}
+
+
+
 /*Top Margin*/
 .mt-16 {
     margin-top: 16px;
@@ -540,6 +569,20 @@
     margin-bottom: 16px;
 }
 
+/*Padding*/
+.p-0 {
+    padding: 0px;
+}
+
+/*Top Padding*/
+.pt-16 {
+    padding-top: 16px;
+}
+
+.pt-32 {
+    padding-top: 32px;
+}
+
 /*Bottom Padding*/
 .pb-16 {
     padding-bottom: 16px;
@@ -547,6 +590,24 @@
 
 .pb-32 {
     padding-bottom: 32px;
+}
+
+/*Left padding*/
+.pl-8 {
+    padding-left: 8px;
+}
+
+.pl-16 {
+    padding-left: 16px;
+}
+
+/*Right padding*/
+.pr-8 {
+    padding-right: 8px;
+}
+
+.pr-16 {
+    padding-right: 16px;
 }
 
 /*Gaps*/

@@ -35,7 +35,7 @@ function Write() {
 
           {isEditing &&
 
-              <form className="w-75 h-80" onSubmit={(e) => (handleSubmit(e))}>
+              <form className="w-75 h-80 pt-16 pb-16 pl-16 pr-16" onSubmit={(e) => (handleSubmit(e))}>
                   <div className="form-header">
                       <h1>New Post</h1>
                   </div>
@@ -62,7 +62,7 @@ function Write() {
           }
 
           {!isEditing &&
-              <div className="card w-75 h-75">
+              <div className="card w-75 h-75 pt-16 pb-16 pl-16 pr-16">
                   <div className="row h-row-centered">
                     <h2>Previewing Content</h2>
                   </div>

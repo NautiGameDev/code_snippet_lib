@@ -1,46 +1,65 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getPostCount, getPostSelection } from '../../services/postService';
+import { getPostSelection } from '../../services/postService';
+import { getAllTags } from '../../services/tagService';
 
 function ViewPosts() {
-    const [sysMessage, setSysMessage] = useState("Loading posts...");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
     const [totalPosts, setTotalPosts] = useState(0);
     const [totalPages, setTotalPages] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
     const [postData, setPostData] = useState([]);
+    const [tagsData, setTagsData] = useState([]);
+
+    const [tag, setTag] = useState("");
+    const [search, setSearch] = useState("");
 
     const postsPerPage = 20;
 
+    const getTags = async () => {
+        const tagsResponse = await getAllTags();
 
-    const calcPageCount = async () => {
-        const countResponse = await getPostCount();
-
-        if (countResponse.status !== 200) {
-            setSysMessage("Error loading page count");
-            return;
+        if (tagsResponse.status !== 200) {
+            setErrorMessage(`Error status ${tagsResponse.status}: ${tagsResponse.message}`);
         }
 
-        setTotalPosts(countResponse.data.count);
-
-        const calculatedPages = Math.ceil(countResponse.data.count / postsPerPage);
-        setTotalPages(calculatedPages);
+        setTagsData(tagsResponse.data.tags);
     }
 
     const getPosts = async (skip) => {
-        const postsResponse = await getPostSelection(skip, postsPerPage);
+        setIsLoading(true);
+        setErrorMessage("");
+
+        const postsResponse = await getPostSelection(skip, postsPerPage, search, tag);
 
         if (postsResponse.status !== 200) {
-            setSysMessage(`Error status ${postsResponse.status}: ${postsResponse.message}`);
+            setErrorMessage(`Error status ${postsResponse.status}: ${postsResponse.message}`);
+            setIsLoading(false);
             return;
         }
 
-        if (postsResponse.data.posts.count === 0) {
-            setSysMessage("No posts could be found.");
+        if (postsResponse.data.count === 0) {
+            setErrorMessage("No posts could be found with those search parameters.");
         }
         else {
             setPostData(postsResponse.data.posts);
-            setSysMessage("");
+            setTotalPosts(postsResponse.data.count);
+
+            const calculatedPages = Math.ceil(postsResponse.data.count / postsPerPage);
+            setTotalPages(calculatedPages);
         }
+
+
+        setIsLoading(false);
+    }
+
+    const handleSubmitFilter = (e) => {
+        e.preventDefault();
+
+        const skip = (currentPage - 1) * postsPerPage;
+
+        getPosts(skip);
     }
 
     const handlePageChange = (page) => {
@@ -52,8 +71,8 @@ function ViewPosts() {
     }
 
     useEffect(() => {      
-        const initPage = () => {
-            calcPageCount();
+        const initPage = () => {     
+            getTags();
             getPosts(0);
         }
 
@@ -61,19 +80,52 @@ function ViewPosts() {
     }, []);
 
   return (
-      <div className="view glitch-in">
-          {sysMessage.trim() === "" ? (
-              <div className="card w-75 h-row-centered glitch-in">
+      <div className="view v-col-center">
+          {!isLoading ? (
+            <div className="col w-100 h-col-centered">
+                  <form className="w-80 pt-16 pb-16 mb-16" onSubmit={(e) => handleSubmitFilter(e)} >
+                      <div className="form-header">
+                        <h3>Filters:</h3>
+                      </div>
+                      <div className="form-row pl-8">
+                          <div className="form-col row">
+                            <label>Search: </label>
+                            <input className="w-75" type="text" value={search} placeholder="Search posts..." onChange={(e) => setSearch(e.target.value)}/>
+                          </div>
+                          <div className="form-col row">
+                              <label>Tags: </label>
+                              <select value={tag} onChange={(e) => setTag(e.target.value)}>
+                                  <option default value="">--</option>
+
+                                  {tagsData.map((tag, ti) => (
+                                      <option key={ti} value={tag.name}>{tag.name}</option>
+                                  ))}
+
+                              </select>
+                          </div>
+                          <div className="form-col row">
+                              <button className="btn-small" type="submit">Search</button>
+                          </div>
+                      </div>
+                      
+                  </form>
+
+              <div className="card w-80 h-60vh pt-16 pb-16 glitch-in">
                 <div className="row w-100 h-row-centered">
                       <h2>Posts</h2>
                   </div>
+                  
                   <div className="row w-100 h-row-centered mb-16">
-                      Filters go here
+                      {errorMessage.trim() === "" ? (
+                          `Total posts found: ${totalPosts}`                         
+                      ) : (
+                                  <span className="error">{errorMessage}</span>
+                      )}
                   </div>
                   <table>
                       <thead>
                           <tr>
-                              <th>
+                              <th className="w-50">
                                 Title
                               </th>
                               <th>
@@ -81,9 +133,6 @@ function ViewPosts() {
                               </th>
                               <th>
                                 Last Updated
-                              </th>
-                              <th>
-                                Controls
                               </th>
                           </tr>
                       </thead>
@@ -115,9 +164,6 @@ function ViewPosts() {
                                         })                                          
                                       )}
                               </td>
-                              <td>
-
-                              </td>
                           </tr>
                       ))}
                       </tbody>
@@ -131,9 +177,10 @@ function ViewPosts() {
                           ))
                       }
                   </div>
+                </div>
               </div>
           ): (
-                  <h2>{sysMessage}</h2>
+                  <h2>Loading posts...</h2>
               ) }
       </div>
   );

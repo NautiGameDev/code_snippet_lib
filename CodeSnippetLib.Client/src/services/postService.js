@@ -10,11 +10,18 @@ export async function newPost(title, tags, content) {
     return await apiRequest("post", 'POST', body);
 }
 
-export async function getPostSelection(skip, take) {   
+export async function getPostSelection(skip, take, search = null, tag = null) {   
 
-    return await apiRequest(`post?skip=${skip}&take=${take}`, 'GET', null);
-}
+    let url = `post?skip=${skip}&take=${take}`;
 
-export async function getPostCount() {
-    return await apiRequest('post/get-count', 'GET', null);
+    if (search && search.trim() !== "") {
+        url += `&search=${search.trim()}`;
+    }
+
+    if (tag && tag.trim() !== "") {
+        url += `&tag=${tag.trim()}`;
+    }
+
+
+    return await apiRequest(url, 'GET', null);
 }

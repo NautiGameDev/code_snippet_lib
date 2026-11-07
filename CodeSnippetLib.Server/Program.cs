@@ -97,6 +97,7 @@ builder.Services.AddScoped<IPostRepo, PostRepo>();
 
 //Tags
 builder.Services.AddScoped<ITagRepo, TagRepo>();
+builder.Services.AddScoped<ITagService, TagService>();
 
 var app = builder.Build();
 
