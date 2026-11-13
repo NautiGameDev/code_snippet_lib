@@ -192,5 +192,96 @@ namespace CodeSnippetLib.Server.Tests
 
             Assert.Equal(expectedStatusCode, getResponse.StatusCode);
         }
+
+
+        [Fact]
+        public async Task UpdatePost_ValidAuthorization_Returns200Ok()
+        {
+            var expectedStatusCode = HttpStatusCode.OK;
+
+            await HandleLogin(AdminUser.UserName, AdminUser.Password, "UpdatePost_ValidAuthorization");
+
+            //Create test post
+            NewPostDto newPostPayload = new NewPostDto()
+            {
+                Title = "Test post to be updated",
+                Content = "This is a test post that will be updated",
+                Tags = ["uTag1", "uTag2"]
+            };
+
+            var response = await _client.PostAsJsonAsync("/api/post", newPostPayload);
+            response.EnsureSuccessStatusCode();
+
+            UpdatePostDto updatedPostPayload = new UpdatePostDto()
+            {
+                Title = "Test post to be updated post update",
+                Content = "This is a test post that will be updated and it has been updated",
+                Tags = ["uTag1", "uTag3"]
+            };
+
+            string originalPostSlug = newPostPayload.Title.ToLower().Replace(" ", "-");
+
+            var updateResponse = await _client.PutAsJsonAsync($"/api/post/edit-post/{originalPostSlug}", updatedPostPayload);
+            string responseBody = await updateResponse.Content.ReadAsStringAsync();
+
+            string testResult = expectedStatusCode == updateResponse.StatusCode ? "Passed" : "Failed";
+
+            string output = EntryLogHandler.GetEntryString(
+                "UpdatePost",
+                "Updatepost with valid authorization",
+                $"{(int)expectedStatusCode} {expectedStatusCode}",
+                $"{(int)updateResponse.StatusCode} {updateResponse.StatusCode}",
+                $"{responseBody}",
+                $"{testResult}"
+                );
+
+            WriteTestResults.AppendData(output);
+
+            _output.WriteLine(output);
+
+            Assert.Equal(expectedStatusCode, updateResponse.StatusCode);
+        }
+
+
+        [Fact]
+        public async Task DeletePost_ValidAuthorization_Returns200Ok()
+        {
+            var expectedStatusCode = HttpStatusCode.OK;
+
+            await HandleLogin(AdminUser.UserName, AdminUser.Password, "DeletePost_ValidAuthorization");
+
+            //Create test post
+            NewPostDto newPostPayload = new NewPostDto()
+            {
+                Title = "Test post to be deleted",
+                Content = "This is a test post that will be deleted",
+                Tags = ["dTag1", "dTag2"]
+            };
+
+            var response = await _client.PostAsJsonAsync("/api/post", newPostPayload);
+            response.EnsureSuccessStatusCode();
+
+            string originalPostSlug = newPostPayload.Title.ToLower().Replace(" ", "-");
+
+            var deleteResponse = await _client.DeleteAsync($"/api/post/delete-post/{originalPostSlug}");
+            string responseBody = await deleteResponse.Content.ReadAsStringAsync();
+
+            string testResult = expectedStatusCode == deleteResponse.StatusCode ? "Passed" : "Failed";
+
+            string output = EntryLogHandler.GetEntryString(
+                "DeletePost",
+                "Deletepost with valid authorization",
+                $"{(int)expectedStatusCode} {expectedStatusCode}",
+                $"{(int)deleteResponse.StatusCode} {deleteResponse.StatusCode}",
+                $"{responseBody}",
+                $"{testResult}"
+                );
+
+            WriteTestResults.AppendData(output);
+
+            _output.WriteLine(output);
+
+            Assert.Equal(expectedStatusCode, deleteResponse.StatusCode);
+        }
     }
 }

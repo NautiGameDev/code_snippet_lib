@@ -60,5 +60,17 @@ namespace CodeSnippetLib.Server.Repos
             await _context.TagsToPost.AddRangeAsync(newDataList);
             await _context.SaveChangesAsync();
         }
+
+        public async Task DeleteTagToPost(TagToPost ttp)
+        {
+            _context.TagsToPost.Remove(ttp);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteTag(Tag tag)
+        {
+            _context.Tags.Remove(tag);
+            await _context.SaveChangesAsync();
+        }
     }
 }

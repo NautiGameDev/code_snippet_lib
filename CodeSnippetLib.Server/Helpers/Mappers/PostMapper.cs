@@ -10,6 +10,7 @@ namespace CodeSnippetLib.Server.Helpers.Mappers
             return new PostDto()
             {
                 Title = post.Title,
+                Slug = post.Slug,
                 Content = post.Content,
                 Tags = post.TagToPosts.Any() ? post.TagToPosts.Select(ttp => ttp.Tag.Name).ToList() : new List<string>(),
                 CreatedAt = post.CreatedAt,

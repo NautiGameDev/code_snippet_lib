@@ -89,6 +89,26 @@ button:hover {
     font-size: var(--ErrorFont);
 }
 
+.btn-alert {
+    background-color: var(--Text);
+    border: none;
+    padding: 4px 8px;
+    font-family: var(--HeadingFont);
+    font-weight: bold;
+    color: var(--Error);
+    font-size: var(--ErrorFont);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--Muted);
+}
+
+.btn-alert:hover {
+    background-color: var(--Error);
+    cursor: pointer;
+    color: var(--Text);
+    box-shadow: 0px 0px 10px 1px var(--Error);
+    scale: 1.05;
+}
+
 .xl-font {
     font-size: var(--ExtraLargeFont);
 }
@@ -170,10 +190,24 @@ thead {
 
 .light-row {
     background-color: var(--Background);
+    transition: all 0.3s ease-in-out;
+}
+
+.light-row:hover {
+    cursor: pointer;
+    background-color: var(--Primary);
+    color: var(--Background);
 }
 
 .dark-row {
     background-color: var(--Card);
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-row:hover {
+    cursor: pointer;
+    background-color: var(--Primary);
+    color: var(--Background);
 }
 
 td {

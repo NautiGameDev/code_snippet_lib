@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using CodeSnippetLib.Server.DTOs.Post;
 
 namespace CodeSnippetLib.Server.Models
 {
@@ -14,5 +15,13 @@ namespace CodeSnippetLib.Server.Models
         public DateTime? UpdatedAt { get; set; }
 
         public virtual List<TagToPost> TagToPosts { get; set; } = new List<TagToPost>();
+
+        public void UpdatePost(UpdatePostDto dto)
+        {
+            Title = dto.Title;
+            Slug = dto.Title.Replace(" ", "-");
+            Content = dto.Content;
+            UpdatedAt = DateTime.UtcNow;
+        }
     }
 }

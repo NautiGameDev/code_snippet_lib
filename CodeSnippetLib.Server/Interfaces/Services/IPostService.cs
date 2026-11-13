@@ -9,6 +9,7 @@ namespace CodeSnippetLib.Server.Interfaces.Services
         public Task<Post?> GetPostBySlug(string slug);
         public Task<List<TagToPost>> GetPostsByTagId(int tagId);
         public Task<(List<PostDto> postDtos, int totalCount)> GetPostSelection(int skip, int take, string? search, string? tag);
-        
+        public Task<(bool success, string message)> UpdatePost(UpdatePostDto dto, string slug);
+        public Task<(bool success, string message)> DeletePost(string slug);
     }
 }

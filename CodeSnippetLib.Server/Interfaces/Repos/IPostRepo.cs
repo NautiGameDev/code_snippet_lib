@@ -8,6 +8,8 @@ namespace CodeSnippetLib.Server.Interfaces.Repos
         public Task<Post?> GetPostBySlug(string slug);
         public Task<List<TagToPost>> GetPostsByTagId(int tagId);
         public Task<(List<Post> posts, int totalCount)> GetPostSelection(int skip, int take, string? search, string? tag);
+        public Task UpdatePost(Post post);
+        public Task DeletePost(Post post);
         
     }
 }

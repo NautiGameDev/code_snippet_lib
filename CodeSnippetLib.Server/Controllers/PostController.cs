@@ -32,7 +32,7 @@ namespace CodeSnippetLib.Server.Controllers
         [HttpGet("by-slug/{slug}")]
         public async Task<IActionResult> GetPostBySlug(string slug)
         {
-            Post? post = await _postService.GetPostBySlug(slug);
+            Post? post = await _postService.GetPostBySlug(slug);             
 
             if (post == null)
             {
@@ -49,6 +49,32 @@ namespace CodeSnippetLib.Server.Controllers
 
             return Ok(new { message = "Posts retrieved successfully", posts = posts, count = count });
         }
-        
+
+        [HttpPut("edit-post/{slug}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> UpdatePost([FromBody] UpdatePostDto dto, string slug)
+        {
+            if (string.IsNullOrEmpty(UserId)) return BadRequest(new { message = "User ID not found in token" });
+
+            var (success, message) = await _postService.UpdatePost(dto, slug);
+
+            if (!success) return BadRequest(new { message = message });
+
+            return Ok(new { message = "Post updated successfully" });
+        }
+
+        [HttpDelete("delete-post/{slug}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeletePost(string slug)
+        {
+            if (string.IsNullOrEmpty(UserId)) return BadRequest(new { message = "User ID not found in token" });
+            var (success, message) = await _postService.DeletePost(slug);
+
+            if (!success) return BadRequest(new { message = message });
+
+            return Ok(new { message = "Post deleted successfully" });
+
+        }
+
     }
 }

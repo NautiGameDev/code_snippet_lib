@@ -19,6 +19,7 @@ import DbHome from './Pages/Dashboard/DbHome';
 import Write from './Pages/Dashboard/Write';
 import ActivityLogs from './Pages/Dashboard/ActivityLogs';
 import ViewPosts from './Pages/Dashboard/ViewPosts';
+import Edit from './Pages/Dashboard/Edit';
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                 <Route path="/Dashboard" element={<Dashboard />}>
                     <Route index element={<DbHome />} />
                     <Route path="new-post" element={<Write />} />
+                    <Route path="edit-post/:slug" element={<Edit />} />
                     <Route path="view-posts" element={<ViewPosts />} />
                     <Route path="activity-logs" element={<ActivityLogs />} />
                 </Route>                

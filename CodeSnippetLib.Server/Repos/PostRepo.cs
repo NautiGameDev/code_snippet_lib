@@ -105,5 +105,16 @@ namespace CodeSnippetLib.Server.Repos
 
             return (posts, totalPosts);
         }
+
+        public async Task UpdatePost(Post post)
+        {
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeletePost(Post post)
+        {
+            _context.Remove(post);
+            await _context.SaveChangesAsync();
+        }
     }
 }

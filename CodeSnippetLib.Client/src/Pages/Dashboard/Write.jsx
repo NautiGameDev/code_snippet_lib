@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { newPost } from '../../services/postService';
 import MarkdownRenderer from '../../components/MarkdownRenderer';
+import { useNavigate } from 'react-router-dom';
 
 function Write() {
     const [title, setTitle] = useState("");
@@ -8,6 +9,7 @@ function Write() {
     const [content, setContent] = useState("");
 
     const [isEditing, setIsEditing] = useState(true);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,9 +23,7 @@ function Write() {
 
         if (response.status === 201) {
             alert("Post created");
-            setTitle("");
-            setTags("");
-            setContent("");
+            navigate("/Dashboard/view-posts");
         }
         else {
             alert(`Error ${response.status}: ${response.message}`);

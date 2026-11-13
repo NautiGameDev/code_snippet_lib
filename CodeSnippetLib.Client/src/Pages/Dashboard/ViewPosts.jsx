@@ -15,6 +15,8 @@ function ViewPosts() {
     const [tag, setTag] = useState("");
     const [search, setSearch] = useState("");
 
+    const navigate = useNavigate();
+
     const postsPerPage = 20;
 
     const getTags = async () => {
@@ -68,6 +70,10 @@ function ViewPosts() {
         const skip = (page - 1) * postsPerPage;
 
         getPosts(skip);
+    }
+
+    const navigateToEdit = (slug) => {
+        navigate(`/Dashboard/edit-post/${slug}`)
     }
 
     useEffect(() => {      
@@ -137,8 +143,8 @@ function ViewPosts() {
                           </tr>
                       </thead>
                       <tbody>
-                      {postData.map((post, index) => (
-                          <tr key={index} className={index % 2 === 0 ? "light-row" : "dark-row"}>
+                              {postData.map((post, index) => (
+                                  <tr key={index} className={index % 2 === 0 ? "light-row" : "dark-row"} onClick={() => navigateToEdit(post.slug) } >
                               <td>
                                   {post.title}
                               </td>
