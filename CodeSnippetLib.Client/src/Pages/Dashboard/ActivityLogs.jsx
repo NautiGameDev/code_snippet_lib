@@ -1,4 +1,4 @@
-import { GetActivityLogs } from "../services/activityLogService";
+import { GetActivityLogs } from "../../services/activityLogService";
 import { useState, useEffect } from 'react';
 function ActivityLogs() {
     const [sysMessage, setSysMessage] = useState("Fetching activity logs...");
@@ -21,9 +21,12 @@ function ActivityLogs() {
     }, []);
 
   return (
-      <div className="page">
+      <div className="view v-col-center">
           {sysMessage.trim() === "" ? (
-                <div className="container">
+              <div className="card w-75 h-80 glitch-in pt-16 pb-16">
+                  <div className="row w-100 h-row-centered">
+                    <h2>Activity Logs</h2>
+                  </div>
                     <table>
                         <thead>
                             <tr>
@@ -31,25 +34,16 @@ function ActivityLogs() {
                                     UserName
                                   </th>
                                   <th>
-                                    Email
-                                  </th>
-                                  <th>
                                     ActivityType
-                                  </th>
-                                  <th>
-                                    IsSuccess
                                   </th>
                                   <th>
                                     Details
                                   </th>
                                   <th>
-                                    UserClient
-                                  </th>
-                                  <th>
                                     TimeStamp
                                   </th>
                                   <th>
-                                    Ip Address
+                                    Is Success
                                   </th>
                                 </tr>
                               </thead>
@@ -60,19 +54,11 @@ function ActivityLogs() {
                                       {log.userName}
                                   </td>
                                   <td>
-                                      {log.email}
-                                  </td>
-                                  <td>
                                       {log.activityType}
                                   </td>
-                                  <td>
-                                      {log.isSuccess ? "True" : "False"}
-                                  </td>
+                                  
                                   <td>
                                       {log.details}
-                                  </td>
-                                  <td>
-                                      {log.userClient}
                                   </td>
                                   <td>
                                       {new Date(log.timeStamp).toLocaleString('en-US', {
@@ -81,14 +67,14 @@ function ActivityLogs() {
                                       })}
                                   </td>
                                   <td>
-                                      {log.ipAddress}
+                                      {log.isSuccess ? "True" : "False"}
                                   </td>
                               </tr>
                           ))}
                   </table>
               </div>
           ) : (
-                <h2>{sysMessage}</h2>
+                <h2 className="glitch-in">{sysMessage}</h2>
            )}
       </div>
   );

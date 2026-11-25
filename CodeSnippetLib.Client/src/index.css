@@ -1,0 +1,224 @@
+:root {
+    /*Colors*/
+    --Background: #0F0E17;
+    --Card: #16161E;
+    --Shadow: #2A2B3F;
+    --Accent: #00FF66;
+    --Primary: #00F0FF;
+    --Tertiary: #FFE600;
+    --Text: #FFFFF0;
+    --Muted: #94A3B8;
+    --Error: #FF007F;
+
+    /*Sizes*/
+    --ExtraLargeFont: 2.5rem;
+    --LargeFont: 1.95rem;
+    --MediumFont: 1.56rem;
+    --SmallFont: 1.25rem;
+    --NormalFont: 1rem;
+    --ErrorFont: 0.9rem;
+
+    /*Weights*/
+    --Bold: 600;
+    --NormalWeight: 400;
+
+    /*Fonts*/
+    --BrandFont: "Chakra Petch", sans-serif;
+    --HeadingFont: "Kode Mono", monospace;
+    --BodyFont: "Inter", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: var(--Background);
+    color: var(--Text);
+    font-size: var(--NormalFont);
+    font-weight: var(--TextWeight);
+    font-family: var(--BodyFont);
+    margin: 0px;
+}
+
+.error {
+    color: var(--Error);
+    font-size: var(--ErrorFont);
+    font-family: var(--HeaderFont);
+    font-style: italic;
+}
+
+.no-select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.link {
+    color: var(--Primary);
+    font-family: var(--HeadingFont);
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+    color: var(--Accent);
+}
+
+button {
+    background-color: var(--Text);
+    border: none;
+    padding: 8px 16px;
+    font-family: var(--HeadingFont);
+    font-weight: bold;
+    color: var(--Card);
+    font-size: var(--NormalFont);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--Muted);
+}
+
+button:hover {
+    background-color: var(--Accent);
+    cursor: pointer;
+    color: var(--Background);
+    box-shadow: 0px 0px 10px 1px var(--Accent);
+    scale: 1.05;
+}
+
+.btn-small {
+    padding: 4px 8px;
+    font-size: var(--ErrorFont);
+}
+
+.btn-alert {
+    background-color: var(--Text);
+    border: none;
+    padding: 4px 8px;
+    font-family: var(--HeadingFont);
+    font-weight: bold;
+    color: var(--Error);
+    font-size: var(--ErrorFont);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--Muted);
+}
+
+.btn-alert:hover {
+    background-color: var(--Error);
+    cursor: pointer;
+    color: var(--Text);
+    box-shadow: 0px 0px 10px 1px var(--Error);
+    scale: 1.05;
+}
+
+.xl-font {
+    font-size: var(--ExtraLargeFont);
+}
+
+.lg-font {
+    font-size: var(--LargeFont);
+}
+
+.med-font {
+    font-size: var(--MediumFont);
+}
+
+.sm-font {
+    font-size: var(--SmallFont);
+}
+
+.heading {
+    font-family: var(--HeadingFont);
+}
+
+.primary {
+    color: var(--Primary);
+}
+
+.Accent {
+    color: var(--Accent);
+}
+
+.tertiary {
+    color: var(--Tertiary);
+}
+
+.muted {
+    color: var(--Muted);
+}
+
+h1 {
+    font-size: var(--LargeFont);
+    font-family: var(--HeadingFont);
+    margin: 0px;
+}
+
+h2 {
+    font-size: var(--MediumFont);
+    font-family: var(--HeadingFont);
+    margin: 0px;
+}
+
+h3 {
+    font-size: var(--SmallFont);
+    font-family: var(--HeadingFont);
+    margin: 0px;
+}
+
+
+
+/*Table*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--Muted);
+    text-align: left;
+}
+
+tr {
+    border: 1px solid var(--Muted);
+}
+
+thead {
+    background-color: var(--Shadow);
+    color: var(--Text);
+    font-family: var(--HeadingFont);
+    font-size: var(--NormalFont);
+}
+
+.light-row {
+    background-color: var(--Background);
+    transition: all 0.3s ease-in-out;
+}
+
+.light-row:hover {
+    cursor: pointer;
+    background-color: var(--Primary);
+    color: var(--Background);
+}
+
+.dark-row {
+    background-color: var(--Card);
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-row:hover {
+    cursor: pointer;
+    background-color: var(--Primary);
+    color: var(--Background);
+}
+
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    border: 1px solid var(--Shadow);
+    padding: 4px 8px;
+    font-size: var(--ErrorFont);
+}
+
+
+

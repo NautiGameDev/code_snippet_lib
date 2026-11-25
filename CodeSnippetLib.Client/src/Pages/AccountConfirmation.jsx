@@ -29,7 +29,7 @@ function AccountConfirmation() {
 
             setTimeout(() => {
                 navigate("/");
-            }, 3000);
+            }, 5000);
         }
         else {
             setSysMessage(`Error ${response.status}: ${response.message}`);
@@ -38,15 +38,15 @@ function AccountConfirmation() {
     }
 
   return (
-      <div className="page">
+      <div className="view v-col-center glitch-in">
           <h2>Confirm Account</h2>
-          <p>Click the button below to finish activating your account.</p>
+          <span className="med-font heading">Click the button below to finish activating your account.</span>
 
-          <button type="button" onClick={handleConfirmation} disabled={isSubmitting}>
+          <button type="button" className="mt-16" onClick={handleConfirmation} disabled={isSubmitting}>
               {isSubmitting ? "Confirming..." : "Confirm Email"}
           </button>
 
-          {sysMessage && <p className="sys-message">{sysMessage}</p>}
+          {sysMessage && <p className="sm-font heading tertiary">{sysMessage}</p>}
       </div>
   );
 }

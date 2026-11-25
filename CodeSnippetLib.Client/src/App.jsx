@@ -10,23 +10,40 @@ import NotFound from './Pages/NotFound';
 import AccountConfirmation from './Pages/AccountConfirmation';
 import RequestPasswordReset from './Pages/RequestPasswordReset';
 import ConfirmPasswordReset from './Pages/ConfirmPasswordReset';
-import ActivityLogs from './Pages/ActivityLogs';
+import Home from './Pages/Home';
+import LandingPage from './Pages/LandingPage';
+
+
+//Admin Dashboard
+import DbHome from './Pages/Dashboard/DbHome';
+import Write from './Pages/Dashboard/Write';
+import ActivityLogs from './Pages/Dashboard/ActivityLogs';
+import ViewPosts from './Pages/Dashboard/ViewPosts';
+import Edit from './Pages/Dashboard/Edit';
 
 function App() {
     return (
         <div className="app-container">
             <Routes>
-                <Route index element={<Login />} />
-                <Route path="dashboard/:username" element={<Dashboard />} />
-                <Route path="register" element={<Register />} />
-                <Route path="welcome/:username" element={<Welcome />} />
-                <Route path="sessionExpired" element={<SessionExpired />} />
-                <Route path="unauthenticated" element={<Unauthenticated />} />
-                <Route path="confirm-email" element={<AccountConfirmation />} />
-                <Route path="request-password-reset" element={<RequestPasswordReset />} />
-                <Route path="reset-password" element={<ConfirmPasswordReset />} />
-                <Route path="admin-logs" element={<ActivityLogs />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="/" element={<Home />}>
+                    <Route index element={<LandingPage />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="register" element={<Register />} />
+                    <Route path="welcome/:username" element={<Welcome />} />
+                    <Route path="session-expired" element={<SessionExpired />} />
+                    <Route path="unauthenticated" element={<Unauthenticated />} />
+                    <Route path="confirm-email" element={<AccountConfirmation />} />
+                    <Route path="request-password-reset" element={<RequestPasswordReset />} />
+                    <Route path="reset-password" element={<ConfirmPasswordReset />} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
+                <Route path="/Dashboard" element={<Dashboard />}>
+                    <Route index element={<DbHome />} />
+                    <Route path="new-post" element={<Write />} />
+                    <Route path="edit-post/:slug" element={<Edit />} />
+                    <Route path="view-posts" element={<ViewPosts />} />
+                    <Route path="activity-logs" element={<ActivityLogs />} />
+                </Route>                
             </Routes>
         </div>
     );

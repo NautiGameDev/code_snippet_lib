@@ -6,9 +6,9 @@ function Welcome() {
     const { username } = useParams();
 
   return (
-      <div className="page">
-          <h1>Welcome {username}</h1>
-          <h2>Please check your email to confirm your account to gain access</h2>
+      <div className="view v-col-center glitch-in">
+          <span className="lg-font">Welcome, {username}</span>
+          <span className="med-font mt-16">Please check your email for an account confirmation link</span>
       </div>
   );
 }

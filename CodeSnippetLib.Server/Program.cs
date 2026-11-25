@@ -91,6 +91,14 @@ builder.Services.AddScoped<IActivityLogRepo, ActivityLogRepo>();
 //Email
 builder.Services.AddTransient<IEmailService, EmailService>();
 
+//Post
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<IPostRepo, PostRepo>();
+
+//Tags
+builder.Services.AddScoped<ITagRepo, TagRepo>();
+builder.Services.AddScoped<ITagService, TagService>();
+
 var app = builder.Build();
 
 app.UseDefaultFiles();

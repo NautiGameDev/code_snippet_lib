@@ -6,8 +6,8 @@ function SessionExpired() {
 
     const delayTransition = () => {
         setTimeout(() => {
-            navigate("/");
-        }, 3000);
+            navigate("/login");
+        }, 5000);
     };
 
     useEffect(() => {
@@ -15,8 +15,12 @@ function SessionExpired() {
     }, []);
 
   return (
-      <div className="page">
-          <h1>Session expired. Returning to login page...</h1>
+      <div className="view v-col-center glitch-in error">
+          <span className="material-icons xl-font">
+              error
+          </span>
+          <span className="error med-font mt-16 heading">Session expired. </span>
+          <span className="error sm-font mt-16 heading">Returning to login page...</span>
       </div>
   );
 }

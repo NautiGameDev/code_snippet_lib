@@ -52,6 +52,13 @@ namespace CodeSnippetLib.Server.Tests
                 //Seed data
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Account>>();
 
+                var adminUser = new Account
+                {
+                    UserName = AdminUser.UserName,
+                    Email = AdminUser.Email,
+                    EmailConfirmed = true
+                };
+
                 var defaultUser = new Account
                 {
                     UserName = TestUser.UserName,
@@ -72,6 +79,9 @@ namespace CodeSnippetLib.Server.Tests
                     Email = TestUserThree.Email,
                     EmailConfirmed = true
                 };
+
+                userManager.CreateAsync(adminUser, AdminUser.Password).GetAwaiter().GetResult();
+                userManager.AddToRoleAsync(adminUser, "Admin");
 
                 userManager.CreateAsync(defaultUser, TestUser.Password).GetAwaiter().GetResult();
                 userManager.CreateAsync(secondUser, TestUserTwo.Password).GetAwaiter().GetResult();

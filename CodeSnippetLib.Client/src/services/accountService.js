@@ -24,6 +24,10 @@ export async function checkLoggedIn() {
     return await apiRequest("account/check-logged", 'GET', null);
 }
 
+export async function checkAdmin() {
+    return await apiRequest("account/check-admin", 'GET', null);
+}
+
 export async function handleLogout() {
     return await apiRequest("account/logout", 'POST', null);
 }
@@ -54,3 +58,4 @@ export async function confirmPasswordReset(userId, confirmationCode, newPassword
 
     return await apiRequest("account/confirm-reset-password", 'POST', body);
 }
+
